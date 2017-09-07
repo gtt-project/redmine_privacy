@@ -1,0 +1,4 @@
+<p>
+  <label for="settings_issues_private_by_default"><%= l :label_issues_private_by_default %></label>
+  <%= check_box_tag 'settings[issues_private_by_default]', '1', RedminePrivacy.issues_private_by_default? %>
+</p>
