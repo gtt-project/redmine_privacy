@@ -1,0 +1,4 @@
+en:
+  field_issues_private_by_default: 新しいレポートはデフォルトで非公開
+  field_warn_when_creating_public_issue: 公開レポートを作成する前に警告する
+  text_privacy_confirm_public: 本当に公開レポートを作成したいですか？

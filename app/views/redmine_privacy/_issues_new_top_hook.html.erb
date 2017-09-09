@@ -1,0 +1,11 @@
+<%= javascript_tag do %>
+  $(document).on('submit',
+                 '#issue-form.new_issue',
+                 function(event){
+                   var checked = $('#issue_is_private_wrap input:checked').size() == 1;
+                   if(!(checked || confirm('<%= j l :text_privacy_confirm_public %>'))) {
+                     $(this).attr('data-submitted', null); // to allow resubmitting the form
+                     event.preventDefault();
+                   }
+                 });
+<% end if issue.project.warn_when_creating_public_issue? %>
