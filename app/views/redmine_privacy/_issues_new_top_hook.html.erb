@@ -1,0 +1,11 @@
+<%= javascript_tag do %>
+  $(document).on('change',
+                 '#issue-form.new_issue #issue_is_private_wrap input',
+                 function(){
+                   if(!this.checked){
+                   if(!confirm('<%= j l :text_privacy_confirm_public %>')){
+                       this.checked = true;
+                     }
+                   }
+                 });
+<% end if issue.project.warn_when_creating_public_issue? %>

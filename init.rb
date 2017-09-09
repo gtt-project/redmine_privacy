@@ -13,12 +13,13 @@ Redmine::Plugin.register :redmine_privacy do
 
   requires_redmine version_or_higher: '3.4.0'
 
-  settings default: {
-    'issues_private_by_default' => false,
-  }, partial: 'redmine_privacy/settings'
+  project_module :privacy do
 
-  permission :view_user_names, {}, read: true
-  permission :view_user_pages, { users: %i( show ) }, read: true
+    permission :view_user_names, {}, read: true
+    permission :view_user_pages, { users: %i( show ) }, read: true
+
+  end
+
 
 end
 

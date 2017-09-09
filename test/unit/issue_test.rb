@@ -1,14 +1,15 @@
 require_relative '../test_helper'
 
 class IssueTest < ActiveSupport::TestCase
+  fixtures :projects
+
+  setup do
+    @project = Project.find 'ecookbook'
+  end
 
   test 'should be private by default' do
-    refute RedminePrivacy.issues_private_by_default?
-    refute Issue.new.is_private?
-
-    with_settings plugin_redmine_privacy: { 'issues_private_by_default' => '1'} do
-      assert RedminePrivacy.issues_private_by_default?
-      assert Issue.new.is_private?
-    end
+    refute Issue.new(project: @project).is_private?
+    @project.update_attribute :issues_private_by_default, true
+    assert Issue.new(project: @project).is_private?
   end
 end

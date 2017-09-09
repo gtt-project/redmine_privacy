@@ -1,2 +1,4 @@
 en:
-  label_issues_private_by_default: New issues are private by default
+  field_issues_private_by_default: New issues are private by default
+  field_warn_when_creating_public_issue: Warn before creating a public issue
+  text_privacy_confirm_public: Do you really want to make this issue public?
