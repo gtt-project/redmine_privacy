@@ -11,6 +11,10 @@ module RedminePrivacy
         end
       end
 
+      def assignable_users
+        super.select(&:visible?)
+      end
+
       def project=(*_)
         super
         privacy_set_private_flag
