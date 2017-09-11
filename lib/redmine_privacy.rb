@@ -2,6 +2,8 @@ module RedminePrivacy
   def self.setup
     RedminePrivacy::Patches::IssuePatch.apply
     RedminePrivacy::Patches::ProjectPatch.apply
+
+    RedminePrivacy::Patches::ProjectsControllerPatch.apply
   end
 end
 
