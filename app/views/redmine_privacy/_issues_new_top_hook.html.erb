@@ -8,4 +8,4 @@
                      event.preventDefault();
                    }
                  });
-<% end if issue.project.warn_when_creating_public_issue? %>
+<% end if issue.safe_attribute?('is_private') && issue.project.warn_when_creating_public_issue? %>
