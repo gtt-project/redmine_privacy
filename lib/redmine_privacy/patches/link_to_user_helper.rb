@@ -28,7 +28,7 @@ module RedminePrivacy
       end
 
       def link_to_user(user, *_)
-        if user.visible?
+        if user.nil? or user.visible?
           super user, *_
         else
           PrivateUsername.new(user, project: @project).to_s
