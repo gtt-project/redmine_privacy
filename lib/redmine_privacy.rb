@@ -7,6 +7,7 @@ module RedminePrivacy
 
     RedminePrivacy::Patches::LinkToUserHelper.apply
 
+    RedminePrivacy::Patches::IssuesControllerPatch.apply
     RedminePrivacy::Patches::ProjectsControllerPatch.apply
   end
 end

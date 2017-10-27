@@ -27,6 +27,14 @@ module RedminePrivacy
       end
       private :privacy_set_private_flag
 
+      def init_journal(*_)
+        super.tap do
+          if project && project.issue_notes_private_by_default?
+            self.private_notes = true
+          end
+        end
+      end
+
     end
   end
 end
