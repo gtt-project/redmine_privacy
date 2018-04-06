@@ -1,4 +1,5 @@
 en:
+  field_displayname: Display name
   field_issues_private_by_default: New issues are private by default
   field_issue_notes_private_by_default: Issue notes are private by default
   field_warn_when_creating_public_issue: Warn before creating a public issue
