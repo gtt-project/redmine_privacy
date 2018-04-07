@@ -1,0 +1,10 @@
+  <p>
+    <%= content_tag :label, l(:label_privacy_displayname_fallback) %>
+    <%= select_tag 'settings[displayname_fallback]', options_from_collection_for_select(RedminePrivacy.possible_displayname_fallbacks, :last, :first, @settings['displayname_fallback']) %>
+  </p>
+  <% if Setting.user_format != :displayname %>
+  <p>
+    <%== l :label_privacy_displayname_info, link: link_to(l(:label_privacy_display_settings), settings_path(tab: 'display')) %>
+  </p>
+  <% end %>
+

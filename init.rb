@@ -13,6 +13,8 @@ Redmine::Plugin.register :redmine_privacy do
 
   requires_redmine version_or_higher: '3.4.0'
 
+  settings default: { }, partial: 'redmine_privacy/settings'
+
   project_module :privacy do
 
     # this permission allows users to see other users

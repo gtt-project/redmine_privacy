@@ -32,8 +32,11 @@ module RedminePrivacy
       module ClassMethods
         def fields_for_order_statement(table = nil)
           if Setting.user_format == :displayname
-            # TODO order taking account that displayname may be unset
-            super
+            table ||= table_name
+            fallback = User::USER_FORMATS[RedminePrivacy.displayname_fallback]
+            fields = (fallback[:order] - ['id']).map {|field| "#{table}.#{field}"}
+            others = fields.one? ? fields[0] : "CONCAT(#{fields.join ",' ',"})"
+            ["COALESCE(NULLIF(#{table}.displayname,''), #{others})", "#{table}.id"]
           else
             super
           end

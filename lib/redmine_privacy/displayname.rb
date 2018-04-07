@@ -5,8 +5,7 @@ module RedminePrivacy
       if user.displayname.present?
         user.displayname
       else
-        # TODO implement that.
-        user.name RedminePrivacy.fallback_formatter
+        user.name RedminePrivacy.displayname_fallback
       end
     end
   end
