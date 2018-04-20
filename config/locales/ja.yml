@@ -1,6 +1,10 @@
-en:
+ja:
+  field_displayname: 表示名
   field_issues_private_by_default: 新しいレポートはデフォルトで非公開
   field_issue_notes_private_by_default: レポートの注記はデフォルトで非公開
   field_warn_when_creating_public_issue: 公開レポートを作成する前に警告する
   text_privacy_confirm_public: 本当に公開レポートを作成したいですか？
   label_privacy_a_user: "%{name}"
+  label_privacy_display_settings: 表示設定
+  label_privacy_displayname_fallback: "Fallback users display format when no display name is set:"
+  label_privacy_displayname_info: "This setting is only relevant when the global <em>Users display format</em> is set to use the display name field, which is not the case at the moment. Go to %{link} to change the users display format."
