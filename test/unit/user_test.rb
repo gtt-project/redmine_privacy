@@ -12,7 +12,7 @@ class UserTest < ActiveSupport::TestCase
     User.current = User.anonymous
     with_settings(user_format: 'firstname_lastname') do
       user = User.find @user.id
-      assert_equal 'a User', user.name
+      assert_equal 'User', user.name
     end
   end
 
