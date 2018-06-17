@@ -15,9 +15,7 @@ module RedminePrivacy
       if m = memberships.first
         name = m.roles.first&.name
       end
-      name ||= I18n.t(:label_user)
-
-      I18n.t(:label_privacy_a_user, name: name)
+      name || I18n.t(:label_user)
     end
 
   end
