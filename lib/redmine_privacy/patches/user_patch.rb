@@ -16,7 +16,7 @@ module RedminePrivacy
 
         User::USER_FORMATS[:displayname] = {
           string: '#{RedminePrivacy::Displayname.(self)}',
-          order: %w(displayname id),
+          order: %w(displayname login id),
           setting_order: 9
         }
       end
@@ -30,17 +30,19 @@ module RedminePrivacy
       end
 
       module ClassMethods
-        def fields_for_order_statement(table = nil)
-          if Setting.user_format == :displayname
-            table ||= table_name
-            fallback = User::USER_FORMATS[RedminePrivacy.displayname_fallback]
-            fields = (fallback[:order] - ['id']).map {|field| "#{table}.#{field}"}
-            others = fields.one? ? fields[0] : "CONCAT(#{fields.join ",' ',"})"
-            ["COALESCE(NULLIF(#{table}.displayname,''), #{others})", "#{table}.id"]
-          else
-            super
-          end
-        end
+        # fails with Redmine 4 due to the coalesce
+        # https://hub.georepublic.net/gtt/redmine_privacy/issues/14
+#        def fields_for_order_statement(table = nil)
+#          if Setting.user_format == :displayname
+#            table ||= table_name
+#            fallback = User::USER_FORMATS[RedminePrivacy.displayname_fallback]
+#            fields = (fallback[:order] - ['id']).map {|field| "#{table}.#{field}"}
+#            others = fields.one? ? fields[0] : "CONCAT(#{fields.join ",' ',"})"
+#            ["COALESCE(NULLIF(#{table}.displayname,''), #{others})", "#{table}.id"]
+#          else
+#            super
+#          end
+#        end
       end
 
     end
