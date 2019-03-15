@@ -30,5 +30,3 @@ module RedminePrivacy
 end
 
 require 'redmine_privacy/view_hooks'
-require 'redmine_privacy/displayname'
-require 'redmine_privacy/private_username'
