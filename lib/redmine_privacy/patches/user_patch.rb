@@ -2,9 +2,21 @@ module RedminePrivacy
   module Patches
     module UserPatch
 
+      module RenderDisplaynameInApi
+        def render_api_custom_values(custom_values, api)
+          if @user
+            api.displayname @user.displayname
+          end
+          super
+        end
+      end
+
       def self.apply
         return if User < self
 
+        MyController.class_eval do
+          helper RedminePrivacy::Patches::UserPatch::RenderDisplaynameInApi
+        end
         User.prepend self
 
         User.class_eval do
