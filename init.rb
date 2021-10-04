@@ -19,6 +19,8 @@ Redmine::Plugin.register :redmine_privacy do
 
     # this permission allows users to see other users
     permission :view_users, {}, read: true
+    # this permission allows users to see same project member's displayname
+    permission :view_members_displayname, {}, read: true
 
   end
 
