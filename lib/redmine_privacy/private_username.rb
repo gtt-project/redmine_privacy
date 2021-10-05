@@ -12,6 +12,9 @@ module RedminePrivacy
       if @project
         memberships = memberships.where(project: @project)
         current_user_memberships = current_user_memberships.where(project: @project)
+      else
+        project_ids = memberships.map {|m| m.project_id}
+        current_user_memberships = current_user_memberships.where(project: project_ids)
       end
 
       if m = memberships.first
