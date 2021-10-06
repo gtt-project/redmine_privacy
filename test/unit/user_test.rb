@@ -56,25 +56,23 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  test 'should show display name of same project member with permission' do
+  test 'should show display name (or role name as fallback) of same project member with permission' do
     Role.find(1).add_permission! :view_members_displayname
     User.current = User.find(2)
-    with_settings(
-      user_format: 'displayname',
-      plugin_redmine_privacy: { 'displayname_fallback' => 'lastname' }
-    ) do
+    with_settings(user_format: 'firstname_lastname') do
       user = User.find @user.id
       assert_equal 'davie', user.name
+
+      user = User.find @user.id
+      user.update_column :displayname, ''
+      assert_equal 'Developer', user.name
     end
   end
 
   test 'should not show display name of same project member without permission' do
     Role.find(1).remove_permission! :view_members_displayname
     User.current = User.find(2)
-    with_settings(
-      user_format: 'displayname',
-      plugin_redmine_privacy: { 'displayname_fallback' => 'lastname' }
-    ) do
+    with_settings(user_format: 'firstname_lastname') do
       user = User.find @user.id
       assert_equal 'Developer', user.name
     end
@@ -83,10 +81,7 @@ class UserTest < ActiveSupport::TestCase
   test 'should not show display name of another project member with permission' do
     Role.find(2).add_permission! :view_members_displayname
     User.current = User.find(8)
-    with_settings(
-      user_format: 'displayname',
-      plugin_redmine_privacy: { 'displayname_fallback' => 'lastname' }
-    ) do
+    with_settings(user_format: 'firstname_lastname') do
       user = User.find @user.id
       assert_equal 'Developer', user.name
     end

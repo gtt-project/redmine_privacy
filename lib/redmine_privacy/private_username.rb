@@ -17,11 +17,13 @@ module RedminePrivacy
         current_user_memberships = current_user_memberships.where(project: project_ids)
       end
 
+      name = nil
       if m = memberships.first
         if current_user_memberships.exists? \
           && User.current.allowed_to?(:view_members_displayname, nil, global: true)
           name = @user.displayname
-        else
+        end
+        if name.blank?
           name = m.roles.first&.name
         end
       end
