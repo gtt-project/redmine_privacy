@@ -2,47 +2,49 @@
 
 This plugin lets you add several privacy related options to Redmine projects
 
-
 ## Requirements
 
- - Redmine >= 3.4.0
+- Redmine >= 3.4.0
 
 ## Installation
 
-To install Redmine privacy plugin, download or clone this repository in your Redmine installation plugins directory! 
+To install Redmine Privacy plugin, download or clone this repository in your Redmine installation plugins directory!
 
-`git clone https://hub.georepublic.net/gtt/redmine_privacy.git`
+```
+cd path/to/plugin/directory
+git clone https://github.com/gtt-project/redmine_privacy.git
+```
 
 Then run
 
-`bundle install`
+```
+bundle install
+bundle exec rake redmine:plugins:migrate
+```
 
-followed by
+After restarting Redmine, you should be able to see the Redmine Privacy plugin in the Plugins page.
 
-`bundle exec rake redmine:plugins:migrate`
+More information on installing (and uninstalling) Redmine plugins can be found here: http://www.redmine.org/wiki/redmine/Plugins
 
+## How to use
 
-After restarting Redmine, you should be able to see the Redmine Resource Manager in the Plugins page.
+TBD
 
-More information on installing Redmine plugins can be found here: http://www.redmine.org/wiki/redmine/Plugins
+## Contributing and Support
 
+The GTT Project appreciates any [contributions](https://github.com/gtt-project/.github/blob/main/CONTRIBUTING.md)! Feel free to contact us for [reporting problems and support](https://github.com/gtt-project/.github/blob/main/CONTRIBUTING.md).
 
 ## Version History
 
-  - 1.3.1 Fixes tests, removes translation string
-  - 1.3.0 Adds display name support
-  - 1.2.0 Allows users to change display name
-  - 1.1.0 Bugfix, adds Japanese translation
-  - 1.0.1 Bugfix
-  
+See [all releases](https://github.com/gtt-project/redmine_privacy/releases) with release notes.
 
 ## Authors
 
-  - [Jens Kraemer](https://github.com/jkraemer)
-
-  - [Daniel Kastl](https://github.com/dkastl)
-
+- [Jens Kraemer](https://github.com/jkraemer)
+- [Ko Nagase](https://github.com/sanak)
+- [Daniel Kastl](https://github.com/dkastl)
+- ... [and others](https://github.com/gtt-project/redmine_privacy/graphs/contributors)
 
 ## LICENSE
 
-GPL v3.0
+This program is free software. See [LICENSE](LICENSE) for more information.
