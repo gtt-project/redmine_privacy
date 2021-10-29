@@ -7,9 +7,10 @@ end
 Redmine::Plugin.register :redmine_privacy do
   name 'Redmine Privacy Plugin'
   author 'Jens Krämer, Georepublic'
-  author_url 'https://hub.georepublic.net/gtt/redmine_privacy'
+  author_url 'https://github.com/georepublic'
+  url 'https://github.com/gtt-project/redmine_privacy'
   description 'Adds several privacy related options to Redmine'
-  version '1.3.1'
+  version '1.3.2'
 
   requires_redmine version_or_higher: '3.4.0'
 
@@ -24,6 +25,4 @@ Redmine::Plugin.register :redmine_privacy do
 
   end
 
-
 end
-
