@@ -6,17 +6,19 @@ module RedminePrivacy
         ProjectsController.prepend self unless ProjectsController < self
       end
 
-
-      def respond_to(*_, &block)
-        if params[:action] == 'show'
-          # having no users effectively hides the project members box
-          if Redmine::VERSION.to_s >= '4.2'
-            @principals_by_role = []
-          else
-            @users_by_role = []
-          end
+      def show
+        respond_to do |format|
+          format.html {
+            super
+            # having no users effectively hides the project members box
+            if Redmine::VERSION.to_s >= '4.2'
+              @principals_by_role = []
+            else
+              @users_by_role = []
+            end
+          }
+          format.any { super }
         end
-        super(*_, &block)
       end
     end
   end
