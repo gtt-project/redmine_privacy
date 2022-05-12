@@ -4,7 +4,7 @@ This plugin lets you add several privacy related options to Redmine projects
 
 ## Requirements
 
-- Redmine >= 3.4.0
+- Redmine >= 4.0.0
 
 ## Installation
 
@@ -36,13 +36,17 @@ The GTT Project appreciates any [contributions](https://github.com/gtt-project/.
 
 ## Version History
 
+- 2.0.0 Support Redmine 5.0 and drop Redmine <= 3.4 support
+- 1.3.2 Publish on GitHub
+
 See [all releases](https://github.com/gtt-project/redmine_privacy/releases) with release notes.
 
 ## Authors
 
 - [Jens Kraemer](https://github.com/jkraemer)
-- [Ko Nagase](https://github.com/sanak)
 - [Daniel Kastl](https://github.com/dkastl)
+- [Thibault Mutabazi](https://github.com/eyewritecode)
+- [Ko Nagase](https://github.com/sanak)
 - ... [and others](https://github.com/gtt-project/redmine_privacy/graphs/contributors)
 
 ## LICENSE
