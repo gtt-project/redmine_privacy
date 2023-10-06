@@ -1,0 +1,13 @@
+de:
+  field_displayname: Anzeigename
+  field_issues_private_by_default: Neue Tickets sind standardmäßig nicht öffentlich
+  field_issue_notes_private_by_default: Kommentare zu Tickets sind standardmäßig privat
+  field_warn_when_creating_public_issue: Vor der Erstellung eines öffentlichen Tickets warnen
+  text_privacy_confirm_public: Wollen Sie wirklich ein öffentliches Ticket erstellen?
+  label_privacy_display_settings: Anzeigeeinstellungen
+  label_privacy_displayname_fallback: 'Wenn kein Anzeigename festgelegt ist, wird auf das Anzeigeformat des Benutzers zurückgegriffen:'
+  label_privacy_displayname_info: Diese Einstellung ist nur relevant, wenn das globale <em>Benutzeranzeigeformat</em> so eingestellt ist, dass das Feld für den Anzeigenamen verwendet wird, was im Moment nicht der Fall ist. Gehen Sie zu %{link}, um das Anzeigeformat für Benutzer zu ändern.
+  
+  project_module_privacy: Vertraulichkeit
+  permission_view_users: Benutzer anzeigen
+  permission_view_members_displayname: Den Display-Namen des Mitglieds anzeigen
