@@ -28,5 +28,3 @@ module RedminePrivacy
       User::USER_FORMATS.keys.first
   end
 end
-
-require 'redmine_privacy/view_hooks'

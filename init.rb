@@ -1,7 +1,14 @@
-require 'redmine'
+require File.expand_path('../lib/redmine_privacy/view_hooks', __FILE__)
 
-Rails.configuration.to_prepare do
-  RedminePrivacy.setup
+if Rails.version > '6.0' && Rails.autoloaders.zeitwerk_enabled?
+  Rails.application.config.after_initialize do
+    RedminePrivacy.setup
+  end
+else
+  require 'redmine_privacy'
+  Rails.configuration.to_prepare do
+    RedminePrivacy.setup
+  end
 end
 
 Redmine::Plugin.register :redmine_privacy do
@@ -10,9 +17,9 @@ Redmine::Plugin.register :redmine_privacy do
   author_url 'https://github.com/georepublic'
   url 'https://github.com/gtt-project/redmine_privacy'
   description 'Adds several privacy related options to Redmine'
-  version '1.3.2'
+  version '2.0.0'
 
-  requires_redmine version_or_higher: '3.4.0'
+  requires_redmine version_or_higher: '4.0.0'
 
   settings default: { }, partial: 'redmine_privacy/settings'
 
