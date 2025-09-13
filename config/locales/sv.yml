@@ -1,0 +1,15 @@
+field_displayname: Visningsnamn
+field_issues_private_by_default: Nya utgåvor är privata som standard
+field_issue_notes_private_by_default: Problemnoteringar är privata som standard
+field_warn_when_creating_public_issue: Varna innan du skapar en offentlig fråga
+text_privacy_confirm_public: Vill du verkligen skapa en offentlig fråga?
+label_privacy_display_settings: Visningsinställningar
+label_privacy_displayname_fallback: 'Reservanvändarens visningsformat när inget visningsnamn
+  har angetts:'
+label_privacy_displayname_info: Denna inställning är endast relevant när det globala
+  <em>visningsformatet</em> för användare är inställt på att använda fältet för visningsnamn,
+  vilket inte är fallet för närvarande. Gå till %{link} för att ändra användarnas
+  visningsformat.
+project_module_privacy: Integritet
+permission_view_users: Visa användare
+permission_view_members_displayname: Visa medlemmens visningsnamn
